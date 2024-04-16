@@ -34,3 +34,4 @@ django-import-export = "*"
 drf-spectacular = "~=0.26.4"
 dj-rest-auth = "==5.0.1"
 cb-django-customer-app = {editable = true, path = "./modules/django_customer_app"}
+cb-django-komatsu-idm = {editable = true, path = "./modules/django_komatsu_idm"}

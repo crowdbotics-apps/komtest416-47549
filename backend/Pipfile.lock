@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "748049241771a82ca0eb8d719e22d3a6453fd54adaa98c08a4dd0984336ef93d"
+            "sha256": "fbfdad2369dab83879d86d2c5fc7bac933db8352aadd8feac8e328baa8df9eb2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -67,6 +67,10 @@
         "cb-django-customer-app": {
             "editable": true,
             "path": "./modules/django_customer_app"
+        },
+        "cb-django-komatsu-idm": {
+            "editable": true,
+            "path": "./modules/django_komatsu_idm"
         },
         "certifi": {
             "hashes": [
@@ -663,6 +667,13 @@
             "markers": "python_version >= '3.8'",
             "version": "==2023.12.1"
         },
+        "jwt": {
+            "hashes": [
+                "sha256:61c9170f92e736b530655e75374681d4fcca9cfa8763ab42be57353b2b203494"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==1.3.1"
+        },
         "markuppy": {
             "hashes": [
                 "sha256:1adee2c0a542af378fe84548ff6f6b0168f3cb7f426b46961038a2bcfaad0d5f"
@@ -882,6 +893,14 @@
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.9.0.post0"
         },
+        "python-http-client": {
+            "hashes": [
+                "sha256:ad371d2bbedc6ea15c26179c6222a78bc9308d272435ddf1d5c84f068f249a36",
+                "sha256:bf841ee45262747e00dec7ee9971dfb8c7d83083f5713596488d67739170cea0"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==3.3.7"
+        },
         "python3-openid": {
             "hashes": [
                 "sha256:33fbf6928f401e0b790151ed2b5290b02545e8775f982485205a066f874aaeaf",
@@ -1098,6 +1117,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==0.7.0"
         },
+        "sendgrid": {
+            "hashes": [
+                "sha256:43ecf5bb742ea5850c7cfe68f5e7d9948772352306d4e83e119899959538b884",
+                "sha256:71424b2a97f5a034121ea3b2666c653ba0ed315982f0d57b7851c0c9503dc5ab"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
+            "version": "==6.11.0"
+        },
         "setuptools": {
             "hashes": [
                 "sha256:6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987",
@@ -1129,6 +1156,12 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.5.0"
+        },
+        "starkbank-ecdsa": {
+            "hashes": [
+                "sha256:9399c3371b899d4a235b68a1ed7919d202fbf024bd2c863ae8ebdad343c2a63a"
+            ],
+            "version": "==2.2.0"
         },
         "tablib": {
             "extras": [

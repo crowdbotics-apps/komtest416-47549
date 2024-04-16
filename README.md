@@ -61,6 +61,7 @@ This section will show any installed modules you add from the Storyboard Modules
 - [react-native-2fa](modules/2fa)
 - [react-native-admin-machines](modules/admin-machines)
 - [django-customer-app](backend/modules)
+- [django-komatsu-idm](backend/modules)
 
 # Getting started: Frontend
 
