@@ -1,0 +1,12 @@
+{
+  "name": "@modules/admin-machines",
+  "version": "1.0.0",
+  "description": "MyKomatsu Admin Machines",
+  "private": true,
+  "main": "index.js",
+  "author": "Crowdbotics",
+  "dependencies": {
+    "@react-native-picker/picker": "^2.5.1",
+    "react-native-responsive-screen": "^1.4.2"
+  }
+}
