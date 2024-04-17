@@ -5,7 +5,7 @@ export const globalOptions = {
   "screenOptions": {
     "headerShown": false
   },
-  "initialRoute": "react_native_2fa"
+  "initialRoute": "Home"
 };
 export const modulesOptions = {
   "@modules/app-menu": {

@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
   navbarTitle: {
     color: "white",
     fontSize: 24,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    fontFamily: "inherit"
   },
   contentContainer: {
     flexGrow: 1,
