@@ -1,56 +1,37 @@
 import React from "react";
 import { Text, StyleSheet, View, Image } from "react-native";
 
-const UpvoteDownvote = (params) => {
-  return (
-    <View style={styles.container}>
+const UpvoteDownvote = params => {
+  return <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.userIcon}>
-          <Image
-            source={require("./assets/edit.png")}
-            style={styles.img}
-          />
+          <Image source={require("./assets/edit.png")} style={styles.img} />
         </View>
         <Text>Username</Text>
       </View>
       <View style={styles.main}>
-        <Image
-          source={require("./assets/edit.png")}
-        />
+        <Image source={require("./assets/edit.png")} />
       </View>
       <View style={styles.likesContainer}>
         <View style={styles.iconContainer}>
-          <Image
-            source={require("./assets/like.png")}
-            style={styles.likeIcon}
-          />
+          <Image source={require("./assets/like.png")} style={styles.likeIcon} />
           <Text>2545</Text>
         </View>
         <View style={styles.iconContainer}>
           <Text>1546</Text>
-          <Image
-            source={require("./assets/unlike.png")}
-            style={styles.likeIcon}
-          />
+          <Image source={require("./assets/unlike.png")} style={styles.likeIcon} />
         </View>
       </View>
       <Text style={styles.text}>Mauris ultrices ut mauris ut elementum nunc. Quisque eu vulputate nunc. Sed odio lectus.</Text>
       <View style={styles.footer}>
         <View style={styles.footerContainer}>
-          <Image
-            source={require("./assets/like.png")}
-            style={styles.img2}
-          />
+          <Image source={require("./assets/like.png")} style={styles.img2} />
         </View>
         <View style={styles.footerContainer}>
-          <Image
-            source={require("./assets/unlike.png")}
-            style={styles.img2}
-          />
+          <Image source={require("./assets/unlike.png")} style={styles.img2} />
         </View>
       </View>
-    </View>
-  );
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -125,5 +106,4 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   }
 });
-
 export default UpvoteDownvote;

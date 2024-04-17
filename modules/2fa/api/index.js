@@ -1,10 +1,7 @@
-
 import { getGlobalOptions } from "@options";
-
 const global = getGlobalOptions();
 const BASE_URL = global.url;
-
-export const sendVerification = async (data) => {
+export const sendVerification = async data => {
   try {
     const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/twofactorauth/send_otp/`, {
       method: "POST",
@@ -18,8 +15,7 @@ export const sendVerification = async (data) => {
     throw new Error("NETWORK_ERROR").message;
   }
 };
-
-export const verifyCode = async (data) => {
+export const verifyCode = async data => {
   try {
     const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/verify/verify_otp/`, {
       method: "DELETE",
@@ -33,8 +29,7 @@ export const verifyCode = async (data) => {
     throw new Error("NETWORK_ERROR").message;
   }
 };
-
-export const getCode = async (id) => {
+export const getCode = async id => {
   const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/2fa?id=${id}`, {
     method: "GET",
     headers: {
@@ -43,8 +38,7 @@ export const getCode = async (id) => {
   });
   return await response.json();
 };
-
-export const verify2FA = async (data) => {
+export const verify2FA = async data => {
   try {
     const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/2fa`, {
       method: "POST",
@@ -58,8 +52,7 @@ export const verify2FA = async (data) => {
     throw new Error("NETWORK_ERROR").message;
   }
 };
-
-export const set2faMethod = async (data) => {
+export const set2faMethod = async data => {
   try {
     const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/twofactorauth/${data.id}/`, {
       method: "PATCH",
@@ -73,8 +66,7 @@ export const set2faMethod = async (data) => {
     throw new Error("NETWORK_ERROR").message;
   }
 };
-
-export const getUser = async (data) => {
+export const getUser = async data => {
   try {
     const response = await fetch(`${BASE_URL}/modules/two-factor-authentication/twofactorauth/${data.id}/`, {
       method: "GET",

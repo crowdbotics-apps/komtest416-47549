@@ -2,131 +2,125 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "./api";
 import { Alert } from "react-native";
 import { mapErrors } from "../utils";
-
-export const sendVerification = createAsyncThunk(
-  "authentication/sendverification",
-  async (data) => {
-    try {
-      const response = await api.sendVerification(data);
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+export const sendVerification = createAsyncThunk("authentication/sendverification", async data => {
+  try {
+    const response = await api.sendVerification(data);
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
-export const getGoogleAuthenticatorQR = createAsyncThunk(
-  "authentication/getGoogleAuthenticatorQR",
-  async () => {
-    try {
-      const response = await api.getGoogleAuthenticatorQR();
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+});
+export const getGoogleAuthenticatorQR = createAsyncThunk("authentication/getGoogleAuthenticatorQR", async () => {
+  try {
+    const response = await api.getGoogleAuthenticatorQR();
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
-export const verifyCode = createAsyncThunk(
-  "authentication/verifyCode",
-  async (data) => {
-    try {
-      const response = await api.verifyCode(data);
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+});
+export const verifyCode = createAsyncThunk("authentication/verifyCode", async data => {
+  try {
+    const response = await api.verifyCode(data);
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
-export const enableAuthentication = createAsyncThunk(
-  "authentication/enableAuthentication",
-  async (data) => {
-    try {
-      const response = await api.enableAuthentication(data);
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+});
+export const enableAuthentication = createAsyncThunk("authentication/enableAuthentication", async data => {
+  try {
+    const response = await api.enableAuthentication(data);
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
-export const verifyEnableAuthenticationCode = createAsyncThunk(
-  "authentication/verifyEnableAuthenticationCode",
-  async (data) => {
-    try {
-      const response = await api.verifyEnableAuthenticationCode(data);
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+});
+export const verifyEnableAuthenticationCode = createAsyncThunk("authentication/verifyEnableAuthenticationCode", async data => {
+  try {
+    const response = await api.verifyEnableAuthenticationCode(data);
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
-export const checkAuthenticationStatus = createAsyncThunk(
-  "authentication/checkAuthenticationStatus",
-  async () => {
-    try {
-      const response = await api.checkAuthenticationStatus();
-      return response.data;
-    } catch (error) {
-      throw new Error();
-    }
+});
+export const checkAuthenticationStatus = createAsyncThunk("authentication/checkAuthenticationStatus", async () => {
+  try {
+    const response = await api.checkAuthenticationStatus();
+    return response.data;
+  } catch (error) {
+    throw new Error();
   }
-);
-
-export const disableAuthenticationStatus = createAsyncThunk(
-  "authentication/disableAuthenticationStatus",
-  async () => {
-    try {
-      const response = await api.disableAuthenticationStatus();
-      return response.data;
-    } catch (error) {
-      Alert.alert("Error", mapErrors(error));
-      throw new Error();
-    }
+});
+export const disableAuthenticationStatus = createAsyncThunk("authentication/disableAuthenticationStatus", async () => {
+  try {
+    const response = await api.disableAuthenticationStatus();
+    return response.data;
+  } catch (error) {
+    Alert.alert("Error", mapErrors(error));
+    throw new Error();
   }
-);
-
+});
 const initialState = {
-  sendVerification: { api: { loading: "idle", error: null }, entities: {} },
+  sendVerification: {
+    api: {
+      loading: "idle",
+      error: null
+    },
+    entities: {}
+  },
   getGoogleAuthenticatorQR: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   },
   verifyCode: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   },
   enableAuthentication: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   },
   verifyEnableAuthenticationCode: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   },
   checkAuthenticationStatus: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   },
   disableAuthenticationStatus: {
-    api: { loading: "idle", error: null },
+    api: {
+      loading: "idle",
+      error: null
+    },
     entities: {}
   }
 };
-
 export const slice = createSlice({
   name: "authentication",
   initialState: initialState,
   reducers: {},
   extraReducers: {
-    [sendVerification.pending]: (state) => {
+    [sendVerification.pending]: state => {
       if (state.sendVerification.api.loading === "idle") {
         state.sendVerification.api.loading = "pending";
       }
@@ -143,7 +137,7 @@ export const slice = createSlice({
         state.sendVerification.api.loading = "idle";
       }
     },
-    [getGoogleAuthenticatorQR.pending]: (state) => {
+    [getGoogleAuthenticatorQR.pending]: state => {
       if (state.getGoogleAuthenticatorQR.api.loading === "idle") {
         state.getGoogleAuthenticatorQR.api.loading = "pending";
       }
@@ -160,7 +154,7 @@ export const slice = createSlice({
         state.getGoogleAuthenticatorQR.api.loading = "idle";
       }
     },
-    [verifyCode.pending]: (state) => {
+    [verifyCode.pending]: state => {
       if (state.verifyCode.api.loading === "idle") {
         state.verifyCode.api.loading = "pending";
       }
@@ -177,7 +171,7 @@ export const slice = createSlice({
         state.verifyCode.api.loading = "idle";
       }
     },
-    [enableAuthentication.pending]: (state) => {
+    [enableAuthentication.pending]: state => {
       if (state.enableAuthentication.api.loading === "idle") {
         state.enableAuthentication.api.loading = "pending";
       }
@@ -194,7 +188,7 @@ export const slice = createSlice({
         state.enableAuthentication.api.loading = "idle";
       }
     },
-    [verifyEnableAuthenticationCode.pending]: (state) => {
+    [verifyEnableAuthenticationCode.pending]: state => {
       if (state.verifyEnableAuthenticationCode.api.loading === "idle") {
         state.verifyEnableAuthenticationCode.api.loading = "pending";
       }
@@ -211,7 +205,7 @@ export const slice = createSlice({
         state.verifyEnableAuthenticationCode.api.loading = "idle";
       }
     },
-    [checkAuthenticationStatus.pending]: (state) => {
+    [checkAuthenticationStatus.pending]: state => {
       if (state.checkAuthenticationStatus.api.loading === "idle") {
         state.checkAuthenticationStatus.api.loading = "pending";
       }
@@ -228,7 +222,7 @@ export const slice = createSlice({
         state.checkAuthenticationStatus.api.loading = "idle";
       }
     },
-    [disableAuthenticationStatus.pending]: (state) => {
+    [disableAuthenticationStatus.pending]: state => {
       if (state.disableAuthenticationStatus.api.loading === "idle") {
         state.disableAuthenticationStatus.api.loading = "pending";
       }

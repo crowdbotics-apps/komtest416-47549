@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-
 const styles = StyleSheet.create({
   mainVerificationView: {
     padding: 10,
@@ -132,11 +131,9 @@ const styles = StyleSheet.create({
   p5: {
     padding: 5
   }
-});
+}); // API Authentication token
 
-// API Authentication token
 const token = "";
-
 export default {
   styles: styles,
   token: token

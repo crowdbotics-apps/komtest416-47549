@@ -1,8 +1,8 @@
 // This function extracts the exact error message from the error object
-
-export const mapErrors = (error) => {
+export const mapErrors = error => {
   let errorMessage = null;
   const errorsList = error.response.data;
+
   if (error.message === "Network Error") {
     errorMessage = "Network Error";
   } else if (errorsList) {
@@ -23,5 +23,6 @@ export const mapErrors = (error) => {
   } else {
     errorMessage = error.message;
   }
+
   return errorMessage;
 };

@@ -2,8 +2,7 @@ import React from "react";
 import { Image, Text, StyleSheet, View } from "react-native";
 
 const KanbanScreen = () => {
-  return (
-    <View style={styles.container}>
+  return <View style={styles.container}>
       <Image resizeMode="contain" style={styles.headerImage} source={require("./assets/header.png")} />
       <Text style={styles.text}>Projects</Text>
       <View style={styles.tabView}>
@@ -19,8 +18,7 @@ const KanbanScreen = () => {
         <FileCard />
         <FileCard />
       </View>
-    </View>
-  );
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -67,27 +65,25 @@ const styles = StyleSheet.create({
     borderRadius: 10
   }
 });
-
 export default KanbanScreen;
 
 const FileCard = () => {
-  return (
-    <View style={fileStyles.container}>
+  return <View style={fileStyles.container}>
       <View style={fileStyles.innerContainer}>
         <View style={fileStyles.img}>
-          <Image source={require("./assets/edit.png")}/>
+          <Image source={require("./assets/edit.png")} />
         </View>
         <View style={fileStyles.textContainer}>
           <Text>Project</Text>
           <Text>18 June 2022, 10:30 AM</Text>
         </View>
         <View style={fileStyles.actionContainer}>
-          <Image style={fileStyles.action} source={require("./assets/checkbox.png")}/>
+          <Image style={fileStyles.action} source={require("./assets/checkbox.png")} />
         </View>
       </View>
-    </View>
-  );
+    </View>;
 };
+
 const fileStyles = StyleSheet.create({
   container: {
     borderRadius: 10,

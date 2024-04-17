@@ -3,9 +3,7 @@ import Navigator from "./navigator";
 import { slice } from "./store";
 
 const TwoFactorAuthentication = () => {
-  return (
-    <Navigator />
-  );
+  return <Navigator />;
 };
 
 export default {

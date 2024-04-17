@@ -1,11 +1,9 @@
 import axios from "axios";
 import { getGlobalOptions } from "@options";
 import options from "../options";
-
 const global = getGlobalOptions();
 const BASE_URL = global.url;
-
-export const sendVerification = (data) => {
+export const sendVerification = data => {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
@@ -18,7 +16,6 @@ export const sendVerification = (data) => {
   };
   return axios.request(config);
 };
-
 export const getGoogleAuthenticatorQR = () => {
   const config = {
     method: "get",
@@ -31,8 +28,7 @@ export const getGoogleAuthenticatorQR = () => {
   };
   return axios.request(config);
 };
-
-export const verifyCode = (data) => {
+export const verifyCode = data => {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
@@ -45,8 +41,7 @@ export const verifyCode = (data) => {
   };
   return axios.request(config);
 };
-
-export const enableAuthentication = (data) => {
+export const enableAuthentication = data => {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
@@ -59,8 +54,7 @@ export const enableAuthentication = (data) => {
   };
   return axios.request(config);
 };
-
-export const verifyEnableAuthenticationCode = (data) => {
+export const verifyEnableAuthenticationCode = data => {
   const config = {
     method: "post",
     maxBodyLength: Infinity,
@@ -73,7 +67,6 @@ export const verifyEnableAuthenticationCode = (data) => {
   };
   return axios.request(config);
 };
-
 export const checkAuthenticationStatus = () => {
   const config = {
     method: "get",
@@ -86,7 +79,6 @@ export const checkAuthenticationStatus = () => {
   };
   return axios.request(config);
 };
-
 export const disableAuthenticationStatus = () => {
   const config = {
     method: "delete",
@@ -99,7 +91,6 @@ export const disableAuthenticationStatus = () => {
   };
   return axios.request(config);
 };
-
 export const api = {
   sendVerification,
   getGoogleAuthenticatorQR,
